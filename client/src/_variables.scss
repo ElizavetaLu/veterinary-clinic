@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500&display=swap');
+
+$main_text_color: #333333;
+
+$primary: #8298AA;
+$secondary: #FCF0EF;
+
+$success: #5db85b;
+$danger: #d9534f;
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
