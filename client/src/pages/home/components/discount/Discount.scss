@@ -1,0 +1,48 @@
+@import "../../../../variables";
+
+.discount {
+    @include container;
+    margin-bottom: $space-between-sections;
+    background-image: url("../../../../../public/images/bg.png");
+    background-size: cover;
+    padding: 54px 72px;
+    border-radius: 30px;
+    backdrop-filter: blur(60px);
+    display: flex;
+    margin-top: 120px;
+
+    &__conditions {
+        padding-right: 20px;
+        width: 65%;
+    }
+
+    &__text {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__cta {
+        @include row_align-center;
+        gap: 18px;
+    }
+
+    &__button {
+        @include button(#fff, 18px, $main_text_color);
+    }
+
+    &__link {
+        border-bottom: 1px solid $main_text_color;
+    }
+
+    &__image-container {
+        position: relative;
+        width: 35%;
+    }
+
+    &__image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 450px;
+    }
+}

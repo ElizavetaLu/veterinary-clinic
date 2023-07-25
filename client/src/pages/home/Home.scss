@@ -1,1 +1,105 @@
 @import "../../variables";
+
+.main { 
+    .welcom-container {
+        position: relative;
+        background-color: $tertiary;
+        height: 100vh;
+
+        .backgroung-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 39vw
+        } 
+
+        .welcom {
+            @include container;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+            margin-bottom: $space-between-sections;
+
+            &__title {
+                font-family: 'Merriweather';
+                font-size: 64px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 90px;
+                max-width: 55%;
+            }
+
+            &__text {
+                margin-top: 14px;
+                margin-bottom: 30px;
+                font-family: 'Montserrat';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+            }
+
+            &__button {
+                @include button($primary, 18px, #fff);
+                padding: 8px 10px;
+                padding-right: 28px;
+                @include row_align-center;
+                gap: 12px;
+            }
+
+            &__button-image {
+                width: 64px;
+                height: 64px;
+                background-color: $tertiary;
+                border-radius: 100%;
+                @include flex-center;
+            }
+
+            &__button-icon {
+                width: 30px
+            }
+        }
+    }
+
+    .services {
+        @include container;
+
+        &__list {
+            margin-top: 32px;
+            display: grid;
+            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        }
+    }
+
+    .specialists-container {
+        margin-top: $space-between-sections;
+        background-image: url("../../../public/images/bg.png");
+        background-size: cover;
+        padding: 98px 0;
+
+        .specialists {
+            @include container;
+
+            &__list {
+                margin-top: 32px;
+                display: flex;
+                gap: 16px;
+            }
+        }
+    }
+
+    .achievements {
+        @include container;
+        margin-top: $space-between-sections;
+
+        &__list {
+            margin-top: 84px;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+        }
+    }
+}
