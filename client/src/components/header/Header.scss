@@ -1,1 +1,142 @@
 @import "../../variables";
+
+.header-container {
+    @include container;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+
+
+    .header {
+        padding: 18px 0;
+        @include row_align-center;
+        justify-content: space-between;
+
+        .logo {
+            &__icon {
+                width: 115px;
+                height: 84px;
+            }
+        }
+
+        .menu {
+            cursor: pointer;
+            background-color: transparent;
+            @include row_align-center;
+            gap: 8px;
+
+            &__text {
+                font-size: 18px;
+                font-weight: 600;
+                font-family: 'Montserrat';
+            }
+
+            &__icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.50);
+            backdrop-filter: blur(15px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 160px;
+            padding: 72px 40px; 
+
+            &__close {
+                cursor: pointer;
+                @include row_align-center;
+                gap: 11px;
+                background-color: transparent;
+            }
+
+            &__close-text {
+                color: $main_light-text_color;
+                font-family: 'Montserrat';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                text-transform: uppercase;
+            }
+
+            &__close-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 72px;
+            }
+
+            &__item {
+                @include row_align-center;
+                gap: 17px;
+            }
+
+            &__item-link {
+                color: $main_light-text_color;
+                font-family: 'Merriweather';
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 44px;
+            }
+
+
+
+            &--hide {
+                -webkit-animation: hideNav 1s ease forwards;
+                -moz-animation: hideNav 1s ease forwards;
+                -o-animation: hideNav 1s ease forwards;
+                animation: hideNav 1s ease forwards;
+            }
+
+            &--show {
+                -webkit-animation: showNav 1s ease forwards;
+                -moz-animation: showNav 1s ease forwards;
+                -o-animation: showNav 1s ease forwards;
+                animation: showNav 1s ease forwards;
+            }
+        }
+
+        &__button {
+            @include button($secondary, 18px, $main_text_color)
+        }
+    }
+}
+
+
+@keyframes hideNav {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: -100%;
+    }
+}
+
+@keyframes showNav {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
+}

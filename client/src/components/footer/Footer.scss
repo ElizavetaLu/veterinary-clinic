@@ -1,1 +1,115 @@
 @import "../../variables";
+
+.footer-container {
+    margin-top: $space-between-sections;
+    background-color: $main_text_color;
+    padding: 66px 0px 17px;
+
+    .footer {
+        @include container;
+
+        &__data {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+            padding-bottom: 36px;
+            display: flex;
+            gap: 90px;
+        }
+
+        &__logo {
+            margin-bottom: 50px;
+            width: 115px;
+            height: 84px;
+        }
+
+        .subscribe {
+            &__title {
+                color: #FFF;
+                font-family: 'Merriweather';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                margin-bottom: 16px;
+            }
+
+            &__field {
+                padding: 0 7px;
+                margin-top: 16px;
+                margin-bottom: 24px;
+                display: flex;
+                gap: 17px;
+                border-bottom: 1px solid #fff;
+                padding-bottom: 5px;
+            }
+
+            &__field-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            &__field-input {
+                color: #FFF;
+                font-family: 'Montserrat';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                background-color: transparent;
+            }
+
+            &__field-button {
+                @include button(#D5DEDC, 14px, $main_text_color)
+            }
+        }
+
+        .links {
+            display: flex;
+            gap: 90px;
+
+            &__block {}
+
+            &__block-title {
+                color: #FFF;
+                font-family: 'Merriweather';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                margin-bottom: 23px;
+            }
+
+            &__block-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            &__list-link {
+                color: #FFF;
+                font-family: 'Montserrat';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                @include row_align-center;
+                gap: 15px;
+            }
+
+            &__icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &__rights {
+            color: #7B838B;
+            text-align: center;
+            font-family: 'Montserrat';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            margin-top: 8px;
+        }
+    }
+}

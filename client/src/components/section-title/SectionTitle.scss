@@ -1,0 +1,20 @@
+@import "../../variables";
+
+.section-title {
+    @include row_align-center;
+
+    &__text {
+        text-transform: capitalize;
+        font-family: 'Merriweather';
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 90px;
+    }
+
+    &__description {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+}

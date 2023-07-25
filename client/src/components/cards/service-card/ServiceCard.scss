@@ -1,0 +1,38 @@
+@import "../../../variables";
+
+.service-card-link {
+    .service-card {
+        border-radius: 26px;
+        background: #FFF;
+        box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.12);
+        padding: 20px;
+
+        &__image-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        &__image {
+            width: 100%;
+        }
+
+        &__title {
+            color: $main_light-text_color;
+            font-family: 'Merriweather';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 26px;
+        }
+
+        &__description {
+            color: $main_light-text_color;
+            font-family: 'Montserrat';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+        }
+    }
+}

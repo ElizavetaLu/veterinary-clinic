@@ -1,16 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500&display=swap');
 
 $main_text_color: #333333;
+$main_light-text_color: #3D4855;
+
+$header-height: 124.5px;
+$space-between-sections: 120px;
 
 $primary: #8298AA;
-$secondary: #FCF0EF;
+$secondary: #D6DEDC;
+$tertiary: #FCF0EF;
 
 $success: #5db85b;
 $danger: #d9534f;
 
 
+@mixin container {
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin row_align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin button($bg-color, $font-size, $color) {
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    border-radius: 40px;
+    padding: 15px 28px;
+    background-color: $bg-color;
+    font-size: $font-size;
+    color: $color;
 }
