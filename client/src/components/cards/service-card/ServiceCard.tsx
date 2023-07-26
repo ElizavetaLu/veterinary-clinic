@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { IServiceCard } from "../../../interfaces";
 import "./ServiceCard.scss";
 
-const ServiceCard = ({ image, title, description }: IServiceCard) => {
+const ServiceCard = ({ id, image, title, description }: IServiceCard) => {
 
     return (
-        <Link className="service-card-link" to={`service/${title}`}>
+        <Link className="service-card-link" to={`service/${title}`} state={{ id }}>
             <div className="service-card">
                 <div className="service-card__image-container">
                     <img className="service-card__image" src={`/images/services/${image}`} alt="service" title="Service image" />
