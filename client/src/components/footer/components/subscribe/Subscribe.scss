@@ -1,0 +1,49 @@
+@import "../../../../variables";
+
+.subscribe {
+    &__title {
+        color: #FFF;
+        font-family: 'Merriweather';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+    &__field {
+        padding: 0 7px;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        display: flex;
+        gap: 17px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 5px;
+    }
+
+    &__field-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    &__field-input {
+        color: #FFF;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        background-color: transparent;
+    }
+
+    &__field-button {
+        @include button(#D5DEDC, 14px, $main_text_color)
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .subscribe {
+        @include row_align-center;
+        flex-direction: column;
+    }
+}

@@ -24,9 +24,7 @@ const SpecialistCard = ({ photo, experience, specialisations, name, description 
                                 </span>
                             )
                         })
-                    }
-
-                    <span className="specialist-card__specialisation">Neurology</span>
+                    } 
                 </div>
                 <p className="specialist-card__description">{description}</p>
                 <div className="specialist-card__cta">

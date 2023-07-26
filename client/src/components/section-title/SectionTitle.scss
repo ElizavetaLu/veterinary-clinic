@@ -18,3 +18,11 @@
         line-height: 28px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .section-title {
+        &__text {
+            font-size: 34px;
+        }
+    }
+}

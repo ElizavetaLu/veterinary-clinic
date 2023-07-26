@@ -17,22 +17,43 @@
             width: 100%;
         }
 
-        &__title {
+        &__title,
+        &__description {
             color: $main_light-text_color;
+            font-style: normal;
+        }
+
+        &__title {
             font-family: 'Merriweather';
             font-size: 18px;
-            font-style: normal;
             font-weight: 700;
             line-height: 26px;
+            margin-top: 10px;
+            margin-bottom: 7px;
         }
 
         &__description {
-            color: $main_light-text_color;
             font-family: 'Montserrat';
             font-size: 14px;
-            font-style: normal;
             font-weight: 400;
-            line-height: 26px;
+            line-height: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .service-card-link {
+        .service-card {
+            padding: 10px;
+
+            &__title {
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            &__description {
+                font-size: 12px;
+            }
         }
     }
 }

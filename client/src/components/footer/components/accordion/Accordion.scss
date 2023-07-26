@@ -1,0 +1,69 @@
+@import "../../../../variables";
+
+.accordion {
+    display: none;
+    width: 90%;
+
+    &__item {
+        cursor: pointer;
+        width: 100%;
+        padding: 10px 5px;
+        border-bottom: 1px solid #fff;
+    }
+
+    &__item:last-child {
+        border-bottom: none;
+    }
+
+    &__toggle {
+        @include row_align-center;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    &__title {
+        white-space: nowrap;
+        color: #FFF;
+        font-family: 'Merriweather';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+    }
+
+    &__vector {
+        width: 15px;
+        height: 15px;
+    }
+
+    &__vector--active {
+        transform: rotate(180deg);
+    }
+
+    &__content {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__link-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__link {
+        color: #FFF;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .accordion {
+        display: block;
+    }
+}

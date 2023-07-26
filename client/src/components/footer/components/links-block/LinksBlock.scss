@@ -1,0 +1,40 @@
+@import "../../../../variables";
+
+.block {
+    &__title {
+        color: #FFF;
+        font-family: 'Merriweather';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 23px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item{
+        display: flex;
+        gap: 20px;
+    }
+
+    &__link {
+        color: #FFF;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        @include row_align-center;
+        gap: 15px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+}

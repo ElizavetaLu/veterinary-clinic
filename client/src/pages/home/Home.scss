@@ -1,6 +1,8 @@
 @import "../../variables";
 
-.main { 
+.main {
+    margin-bottom: $space-between-sections;
+
     .welcom-container {
         position: relative;
         background-color: $tertiary;
@@ -10,8 +12,9 @@
             position: absolute;
             right: 0;
             bottom: 0;
-            width: 39vw
-        } 
+            width: 42vw;
+            transform: rotateY(180deg)
+        }
 
         .welcom {
             @include container;
@@ -39,6 +42,7 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: 28px;
+                max-width: 55%;
             }
 
             &__button {
@@ -70,7 +74,7 @@
             margin-top: 32px;
             display: grid;
             gap: 28px;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
     }
 
@@ -85,7 +89,8 @@
 
             &__list {
                 margin-top: 32px;
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 16px;
             }
         }
@@ -99,7 +104,87 @@
             margin-top: 84px;
             display: grid;
             gap: 16px;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main {
+        .welcom-container {
+            .welcom {
+                @include mobile_container-padding;
+
+                &__title {
+                    font-size: 44px;
+                    line-height: 70px;
+                }
+
+                &__text {
+                    font-size: 16px;
+                }
+
+                &__button {
+                    padding: 4px 5px;
+                    padding-right: 20px;
+                }
+
+                &__button-image {
+                    width: 54px;
+                    height: 54px;
+                }
+
+                &__button-icon {
+                    width: 20px
+                }
+            }
+        }
+
+        .services {
+            @include mobile_container-padding;
+
+            &__list {
+                margin-top: 20px;
+                gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        .specialists-container {
+            .specialists {
+                @include mobile_container-padding;
+            }
+        }
+
+        .achievements {
+            @include mobile_container-padding;
+
+            &__list {
+                gap: 50px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main {
+        .welcom-container {
+            .backgroung-image {
+                display: none;
+            }
+
+            .welcom {
+                @include mobile_container-padding;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &__title,
+                &__text {
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
         }
     }
 }

@@ -9,7 +9,6 @@ import services from "../../data/services";
 import "./Home.scss";
 
 
-
 const Home = () => {
 
     return (
@@ -41,8 +40,9 @@ const Home = () => {
                             return (
                                 <ServiceCard
                                     key={item._id}
+                                    id={item._id}
                                     image={item.image}
-                                    title={item.title}
+                                    title={item.name}
                                     description={item.description}
                                 />
                             )

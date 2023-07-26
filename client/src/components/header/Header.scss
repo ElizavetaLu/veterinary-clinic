@@ -15,11 +15,9 @@
         @include row_align-center;
         justify-content: space-between;
 
-        .logo {
-            &__icon {
-                width: 115px;
-                height: 84px;
-            }
+        &__logo {
+            width: 115px;
+            height: 84px;
         }
 
         .menu {
@@ -38,7 +36,12 @@
                 width: 26px;
                 height: 26px;
             }
+
+            &__icon-mobile {
+                display: none;
+            }
         }
+
 
         .navigation {
             position: fixed;
@@ -52,7 +55,7 @@
             flex-direction: column;
             align-items: center;
             gap: 160px;
-            padding: 72px 40px; 
+            padding: 72px 40px;
 
             &__close {
                 cursor: pointer;
@@ -97,8 +100,6 @@
                 line-height: 44px;
             }
 
-
-
             &--hide {
                 -webkit-animation: hideNav 1s ease forwards;
                 -moz-animation: hideNav 1s ease forwards;
@@ -112,6 +113,10 @@
                 -o-animation: showNav 1s ease forwards;
                 animation: showNav 1s ease forwards;
             }
+        }
+
+        &--hide {
+            display: none;
         }
 
         &__button {
@@ -138,5 +143,59 @@
 
     to {
         top: 0;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .header-container {
+        @include mobile_container-padding;
+
+        .header {
+            &__logo {
+                width: 92px;
+                height: 67.2px;
+            }
+
+
+            .navigation {
+                gap: 80px;
+                padding: 50px 20px;
+
+                &__list {
+                    gap: 30px;
+                }
+
+                &__item-link {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .header-container {
+        @include mobile_container-padding;
+
+        .header {
+            &__button {
+                display: none;
+            }
+
+            .menu {
+
+                &__text,
+                &__icon {
+                    display: none;
+                }
+
+                &__icon-mobile {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
     }
 }

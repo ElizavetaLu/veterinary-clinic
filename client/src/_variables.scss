@@ -20,6 +20,9 @@ $danger: #d9534f;
     padding: 0 40px;
     margin: 0 auto;
 }
+@mixin mobile_container-padding {
+    padding: 0 16px;
+}
 
 @mixin flex-center {
     display: flex;
