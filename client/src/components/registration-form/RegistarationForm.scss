@@ -1,0 +1,107 @@
+@import "../../variables";
+
+
+.form-container {
+    margin-top: $space-between-sections;
+    background-image: url('../../../public//images/bg.png');
+    background-size: cover;
+    padding: 55px 0 $space-between-sections;
+
+    .form {
+        @include container;
+
+        &__header {
+            @include row_align-center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+
+            .switch {
+                @include row_align-center;
+                gap: 12px;
+
+                &__title {
+                    font-family: 'Montserrat';
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 28px;
+                }
+
+                &__input[type=checkbox] {
+                    height: 0;
+                    width: 0;
+                    visibility: hidden;
+                }
+
+                &__label {
+                    cursor: pointer;
+                    text-indent: -9999px;
+                    width: 92px;
+                    height: 50px;
+                    background: #fff;
+                    display: block;
+                    border-radius: 100px;
+                    position: relative;
+                }
+
+                &__label:after {
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    width: 40px;
+                    height: 40px;
+                    background: #CFDAE7;
+                    border-radius: 90px;
+                    transition: 0.3s;
+                }
+
+                &__input:checked+label:after {
+                    left: calc(100% - 5px);
+                    transform: translateX(-100%);
+                    background: $primary;
+                }
+
+                &__label:active:after {
+                    width: 50px;
+                }
+            }
+        }
+
+        &__title {
+            font-family: 'Merriweather';
+            font-size: 44px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 90px;
+        }
+
+        &__field-row {
+            @include row_align-center;
+            gap: 40px;
+            margin-bottom: 24px;
+        } 
+
+        &__fields-columns {
+            display: flex;
+            gap: 40px;
+        }
+
+        &__block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        &__send {
+            display: flex;
+            justify-content: center;
+            margin-top: 73px;
+        }
+
+        &__send-button {
+            @include button($primary, 18px, #fff)
+        }
+    }
+}
