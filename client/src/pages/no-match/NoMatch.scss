@@ -1,1 +1,28 @@
 @import "../../variables";
+
+.no-match {
+    background-image: url('../../../public/images/no-match1.jpg');
+    background-size: cover;
+    height: 100vh;
+    @include flex-center;
+
+    &__info {
+        @include row_align-center;
+        flex-direction: column;
+    }
+    
+    &__error-code { 
+        color: #82c4d2;
+        font-size: 300px;
+    }
+    
+    &__error-text { 
+        color: #89adb5;
+        font-size: 50px;
+    }
+
+    &__link {
+        margin-top: 30px;
+        @include button($tertiary, 30px, $main_text_color )
+    }
+}
