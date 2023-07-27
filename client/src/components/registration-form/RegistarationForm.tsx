@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { IRegistarationForm } from "../../interfaces";
-import services from "../../data/services";
+import { IRegistarationForm } from "../../interfaces"; 
 import CustomDateTimePicker from "../date-time-picker/CustomDateTimePicker";
-import specialists from "../../data/specialists";
-import Dropdown from "../dropdown/Dropdown";
-import clinics from "../../data/clinics";
+// import specialists from "../../data/specialists";
+import Dropdown from "../dropdown/Dropdown"; 
 import Input from "../input/Input";
 import "./RegistarationForm.scss";
 import Switcher from "../switcher/Switcher";
+import { clinics } from "../../data/main-data";
 
 
 
-const RegistarationForm = ({ service, specialistName, clinicAddress }: IRegistarationForm) => {
+const RegistarationForm = ({ service, specialistName, clinicAddress, scrollTo }: IRegistarationForm) => {
 
     const [isFirstVisit, setIsFirstVisit] = useState(true);
 
@@ -32,7 +31,7 @@ const RegistarationForm = ({ service, specialistName, clinicAddress }: IRegistar
 
 
     return (
-        <div className="form-container">
+        <div className="form-container" ref={scrollTo}>
             <form className="form" action="">
                 <div className="form__header">
                     <h2 className="form__title">Registration form</h2>
@@ -59,8 +58,8 @@ const RegistarationForm = ({ service, specialistName, clinicAddress }: IRegistar
                         <div className="form__block">
                             <Input placeholder="Phone Number" value={phoneNumber} setValue={setPhoneNumber} />
                             {isFirstVisit && <Input placeholder="Email" value={email} setValue={setEmail} />}
-                            <Dropdown selected="Selected service" options={services} />
-                            <Dropdown selected="Selected specialist" options={specialists} />
+                            {/* <Dropdown selected="Selected service" options={services} /> */}
+                            {/* <Dropdown selected="Selected specialist" options={specialists} /> */}
                             <Dropdown selected="Selected nearest clinic" options={clinics} />
                         </div>
 

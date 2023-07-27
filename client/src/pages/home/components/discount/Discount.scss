@@ -51,6 +51,8 @@
 @media screen and (max-width: 900px) {
     .discount {
         padding: 30px 20px;
+        margin-top: $space-between-sections_mobile;
+        margin-bottom: $space-between-sections_mobile;
 
         &__conditions {
             width: 50%;

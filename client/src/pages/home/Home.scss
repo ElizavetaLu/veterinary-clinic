@@ -90,8 +90,30 @@
             &__list {
                 margin-top: 32px;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+
+            &__link-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px
+            }
+
+            &__link {
+                font-family: 'Montserrat';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+                color: $primary;
+                border-bottom: 1.5px solid $primary;
+                transition: all .2s;
+
+                &:hover {
+                    color: $main_text_color;
+                    border-color: $main_light-text_color;
+                }
             }
         }
     }
@@ -111,9 +133,12 @@
 
 @media screen and (max-width: 900px) {
     .main {
+        margin-bottom: $space-between-sections_mobile;
+
         .welcom-container {
             .welcom {
                 @include mobile_container-padding;
+                margin-bottom: $space-between-sections_mobile;
 
                 &__title {
                     font-size: 44px;
@@ -127,6 +152,7 @@
                 &__button {
                     padding: 4px 5px;
                     padding-right: 20px;
+                    font-size: 16px;
                 }
 
                 &__button-image {
@@ -151,13 +177,21 @@
         }
 
         .specialists-container {
+            margin-top: $space-between-sections_mobile;
+            padding: 40px 0;
+
             .specialists {
                 @include mobile_container-padding;
+
+                &__list {
+                    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+                }
             }
         }
 
         .achievements {
             @include mobile_container-padding;
+            margin-top: $space-between-sections_mobile;
 
             &__list {
                 gap: 50px;
