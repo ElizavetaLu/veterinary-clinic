@@ -17,7 +17,7 @@
 
         &__logo {
             width: 115px;
-            height: 84px;
+            height: 74px;
         }
 
         .menu {
@@ -48,6 +48,7 @@
             bottom: 0;
             left: 0;
             right: 0;
+            top: -100%;
             background: rgba(255, 255, 255, 0.50);
             backdrop-filter: blur(15px);
             height: 100%;
@@ -56,6 +57,7 @@
             align-items: center;
             gap: 160px;
             padding: 72px 40px;
+            transition: all .7s ease;
 
             &__close {
                 cursor: pointer;
@@ -101,49 +103,14 @@
                 text-transform: capitalize;
             }
 
-            &--hide {
-                -webkit-animation: hideNav 1s ease forwards;
-                -moz-animation: hideNav 1s ease forwards;
-                -o-animation: hideNav 1s ease forwards;
-                animation: hideNav 1s ease forwards;
+            &--active {
+                top: 0;
             }
-
-            &--show {
-                -webkit-animation: showNav 1s ease forwards;
-                -moz-animation: showNav 1s ease forwards;
-                -o-animation: showNav 1s ease forwards;
-                animation: showNav 1s ease forwards;
-            }
-        }
-
-        &--hide {
-            display: none;
         }
 
         &__button {
             @include button($secondary, 18px, $main_text_color)
         }
-    }
-}
-
-
-@keyframes hideNav {
-    from {
-        top: 0;
-    }
-
-    to {
-        top: -100%;
-    }
-}
-
-@keyframes showNav {
-    from {
-        top: -100%;
-    }
-
-    to {
-        top: 0;
     }
 }
 
@@ -155,7 +122,7 @@
         .header {
             &__logo {
                 width: 92px;
-                height: 67.2px;
+                height: 66.6px;
             }
 
 
@@ -180,6 +147,11 @@
         @include mobile_container-padding;
 
         .header {
+            &__logo {
+                width: 73.6px;
+                height: 53.28px;
+            }
+
             &__button {
                 display: none;
             }

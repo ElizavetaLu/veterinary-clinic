@@ -17,7 +17,7 @@
         &__logo {
             margin-bottom: 50px;
             width: 115px;
-            height: 84px;
+            height: 74px;
         }
 
         .links {
@@ -47,7 +47,7 @@
             &__logo {
                 margin-bottom: 30px;
                 width: 92px;
-                height: 67.2px;
+                height: 66.6px;
             }
 
             &__data {
@@ -69,15 +69,18 @@
 @media screen and (max-width: 650px) {
     .footer-container {
         .footer {
+            &__logo {
+                margin-bottom: 20px;
+            }
 
             &__data {
                 gap: 20px;
                 flex-direction: column;
-              align-items: center;
+                align-items: center;
             }
 
-            &__cta { 
-                gap: 20px;
+            &__cta {
+                gap: 0px;
                 flex-direction: column;
                 align-items: center;
             }
