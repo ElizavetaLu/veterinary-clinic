@@ -10,7 +10,7 @@ const NoMatch = () => {
                 <Link className="no-match__link" to="/">Go Back Home</Link>
             </div>
         </div>
-    )
+    );
 };
 
 export default NoMatch;

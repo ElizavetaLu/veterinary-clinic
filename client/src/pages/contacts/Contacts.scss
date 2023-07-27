@@ -10,7 +10,8 @@
     &__data {
         width: 35%
     }
-    &__map{
+
+    &__map {
         width: 65%
     }
 
@@ -78,5 +79,38 @@
 
     &__nested-item:hover {
         text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contacts {
+        @include mobile_container-padding;
+        margin-bottom: $space-between-sections_mobile;
+        margin-top: 150px;
+        flex-direction: column;
+        gap: 50px;
+
+        &__data,
+        &__map {
+            width: 100%
+        }
+
+        &__title {
+            font-size: 34px;
+            line-height: 70px;
+            margin-bottom: 20px;
+        }
+        &__list { 
+            gap: 10px;
+        }
+
+        &__item {
+            font-size: 14px;
+        }
+
+        &__item-icon {
+            width: 20px;
+            height: 20px;
+        }
     }
 }

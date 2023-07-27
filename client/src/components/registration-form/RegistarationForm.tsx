@@ -7,6 +7,7 @@ import Dropdown from "../dropdown/Dropdown";
 import clinics from "../../data/clinics";
 import Input from "../input/Input";
 import "./RegistarationForm.scss";
+import Switcher from "../switcher/Switcher";
 
 
 
@@ -21,7 +22,7 @@ const RegistarationForm = ({ service, specialistName, clinicAddress }: IRegistar
     // const [specialization, setSpecialization] = useState(service);
     // const [specialist, setSpecialist] = useState(specialistName);
     // const [address, setAddress] = useState(clinicAddress);
- 
+
     const [clientCardNumber, setClientCardNumber] = useState('');
     const [petName, setPetName] = useState('');
     const [animalType, setAnimalType] = useState('');
@@ -36,23 +37,22 @@ const RegistarationForm = ({ service, specialistName, clinicAddress }: IRegistar
                 <div className="form__header">
                     <h2 className="form__title">Registration form</h2>
 
-                    <div className="switch">
-                        <p className="switch__title">Have you ever been to our clinic before? </p>
-                        <input
-                            checked={!isFirstVisit}
-                            onChange={() => setIsFirstVisit(!isFirstVisit)}
-                            className="switch__input"
-                            type="checkbox"
-                            id="switch"
-                        />
-                        <label className="switch__label" htmlFor="switch">Toggle</label>
-                    </div>
+                    <Switcher isActive={isFirstVisit} setIsActive={setIsFirstVisit}/>
                 </div>
                 <div className="form__fields">
+
+                    <div className="form__field-row-mobile">
+                        <div className="form__date-picker-mobile">
+                            <CustomDateTimePicker />
+                        </div>
+                    </div>
+
                     <div className="form__field-row">
                         <Input placeholder="Name" value={name} setValue={setName} />
                         <Input placeholder="Last Name" value={lastName} setValue={setLastName} />
-                        <CustomDateTimePicker />
+                        <div className="form__date-picker">
+                            <CustomDateTimePicker />
+                        </div>
                     </div>
 
                     <div className="form__fields-columns">

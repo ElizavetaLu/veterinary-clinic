@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import footerNavigation from "../../data/footerNavigation";
+import { Link } from "react-router-dom"; 
 import LinksBlock from "./components/links-block/LinksBlock";
 import Accordion from "./components/accordion/Accordion";
 import Subscribe from "./components/subscribe/Subscribe";
 import "./Footer.scss";
+import { footerNavigation } from "../../data/navigation";
 
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
                 <p className="footer__rights">All Rights Reserved Of Pet Doctor in 2023</p>
             </footer >
         </div >
-    )
+    );
 };
 
 export default Footer;

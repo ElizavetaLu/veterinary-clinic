@@ -33,7 +33,7 @@ const CustomDateTimePicker = () => {
             }
             calendarClassName="calendar"
         />
-    )
-}
+    );
+};
 
-export default CustomDateTimePicker
+export default CustomDateTimePicker;

@@ -1,22 +1,19 @@
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation} from "react-router-dom";
 import RegistarationForm from "../../components/registration-form/RegistarationForm";
 import serviceFullData from "../../data/servicesFullData";
 import "./Service.scss";
 
+
 const Service = () => {
 
-    const { state } = useLocation();
-    const navigate = useNavigate()
+    const { state } = useLocation(); 
 
-    
-    if(!state?.id) return <Navigate to="*" />
+    if(!state?.id) return <Navigate to="*" />;
 
-    const currentService = serviceFullData.find(service => service._id === state.id)
-    
+    const currentService = serviceFullData.find(service => service._id === state.id);
 
     return (
         <main className="service">
-
             <section className="introduction-container" style={{ backgroundImage: `url('/images/services/${currentService?.image}')` }}>
                 <div className="introduction-container__brightness"></div>
 
@@ -79,7 +76,29 @@ const Service = () => {
 
             <RegistarationForm service={currentService?.name} />
         </main>
-    )
+    );
 };
 
 export default Service;
+
+
+
+ 
+
+
+
+
+
+
+
+git add client/src/components/input/Input.tsx
+git add client/src/components/registration-form/RegistarationForm.scss
+git add client/src/components/registration-form/RegistarationForm.tsx
+git add client/src/components/section-title/SectionTitle.scss  
+git add client/src/pages/contacts/Contacts.scss
+git add client/src/pages/contacts/Contacts.tsx   
+git add client/src/pages/no-match/NoMatch.scss
+git add client/src/pages/no-match/NoMatch.tsx
+git add client/src/pages/service/Service.scss
+git add client/src/pages/service/Service.tsx 
+git add client/src/components/switcher/
