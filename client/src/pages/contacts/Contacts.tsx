@@ -1,8 +1,10 @@
-import clinics from "../../data/clinics";
-import "./Contacts.scss";
+import { clinics } from "../../data/main-data";
 import Map from "./components/map/Map";
+import "./Contacts.scss";
+
 
 const Contacts = () => {
+    
     return (
         <main className="contacts">
             <div className="contacts__data">

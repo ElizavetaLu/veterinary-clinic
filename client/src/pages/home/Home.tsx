@@ -1,12 +1,12 @@
+import { Link } from "react-router-dom";
+import { acivements, services, specialists } from "../../data/main-data";
+import SpecialistCard from "../../components/cards/specialist-card/SpecialistCard";
 import Achievement from "../../components/cards/achievement-card/Achievement";
 import ServiceCard from "../../components/cards/service-card/ServiceCard";
-import SpecialistCard from "../../components/cards/specialist-card/SpecialistCard";
 import SectionTitle from "../../components/section-title/SectionTitle";
-import Discount from "./components/discount/Discount";
-import specialists from "../../data/specialists";
-import acivements from "../../data/acivements";
-import services from "../../data/services";
-import "./Home.scss";
+import Discount from "./components/discount/Discount"; 
+import "./Home.scss"; 
+
 
 
 const Home = () => {
@@ -36,17 +36,7 @@ const Home = () => {
                 <SectionTitle title="services" description="" />
                 <div className="services__list">
                     {
-                        services.map(item => {
-                            return (
-                                <ServiceCard
-                                    key={item._id}
-                                    id={item._id}
-                                    image={item.image}
-                                    title={item.name}
-                                    description={item.description}
-                                />
-                            )
-                        })
+                        services.map(item => <ServiceCard key={item._id} {...item} />)
                     }
                 </div>
             </section>
@@ -54,21 +44,15 @@ const Home = () => {
             <div className="specialists-container">
                 <section className="specialists">
                     <SectionTitle title="specialists" description="" />
+
                     <div className="specialists__list">
                         {
-                            specialists.map(item => {
-                                return (
-                                    <SpecialistCard
-                                        key={item._id}
-                                        photo={item.photo}
-                                        experience={item.experience}
-                                        specialisations={item.specialisations}
-                                        name={item.name}
-                                        description={item.description}
-                                    />
-                                )
-                            })
+                            specialists.map(item => <SpecialistCard key={item._id} {...item} />)
                         }
+                    </div>
+
+                    <div className="specialists__link-container">
+                        <Link to="" className="specialists__link">See all</Link>
                     </div>
                 </section>
             </div>
@@ -91,7 +75,48 @@ const Home = () => {
                 </div>
             </section>
         </main>
-    )
+    );
 };
 
 export default Home;
+
+
+
+
+
+git add public/images/services/service3.png
+git add public/images/services/service5.png
+git add public/images/services/service7.png
+git add public/images/specialists/specialist1.png
+git add public/images/specialists/specialist2.png
+
+git add src/components/cards/service-card/ServiceCard.tsx
+git add src/components/cards/specialist-card/SpecialistCard.scss
+git add src/components/cards/specialist-card/SpecialistCard.tsx
+ 
+git add src/components/registration-form/RegistarationForm.tsx
+ 
+
+git add src/pages/contacts/Contacts.tsx
+git add src/pages/contacts/components/map/Map.tsx
+git add src/pages/home/Home.scss
+git add src/pages/home/Home.tsx
+git add src/pages/home/components/discount/Discount.scss
+git add src/pages/home/components/discount/Discount.tsx
+git add src/pages/service/Service.scss
+git add src/pages/service/Service.tsx
+
+ 
+git add public/images/services/service-large5.jpg
+git add public/images/services/service-large6.jpg
+git add public/images/services/service-large7.jpg
+git add public/images/services/service-large9.jpg
+git add public/images/services/service3.jpg
+git add public/images/services/service5.jpg
+git add public/images/services/service7.jpg
+git add public/images/specialists/specialist4.png
+git add public/images/specialists/specialist5.png
+git add public/images/specialists/specialist6.png
+git add public/images/specialists/specialist7.png
+
+

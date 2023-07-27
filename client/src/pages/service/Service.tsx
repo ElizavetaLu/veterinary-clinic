@@ -1,25 +1,33 @@
-import { Navigate, useLocation} from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import RegistarationForm from "../../components/registration-form/RegistarationForm";
-import serviceFullData from "../../data/servicesFullData";
+import { IProcedure } from "../../interfaces";
 import "./Service.scss";
+import { useRef } from "react";
+import ProceduresTable from "./procedures-table/ProceduresTable";
 
 
 const Service = () => {
 
-    const { state } = useLocation(); 
+    const regForm = useRef<HTMLDivElement>(null);
 
-    if(!state?.id) return <Navigate to="*" />;
+    const bookAnAppointment = () => {
+        regForm.current!.scrollIntoView(false)
+    }
 
-    const currentService = serviceFullData.find(service => service._id === state.id);
+    const { state } = useLocation();
+    if (!state) return <Navigate to="*" />;
+
+    const { images, title, about, additionalInfo, procedures } = state;
 
     return (
         <main className="service">
-            <section className="introduction-container" style={{ backgroundImage: `url('/images/services/${currentService?.image}')` }}>
+            <section className="introduction-container" style={{ backgroundImage: `url('/images/services/${images?.large}')` }}>
+                <div className="introduction-container__light-gradient"></div>
                 <div className="introduction-container__brightness"></div>
 
                 <div className="introduction">
-                    <h1 className="introduction__title">{currentService?.name}</h1>
-                    <button className="introduction__button">
+                    <h1 className="introduction__title">{title}</h1>
+                    <button className="introduction__button" onClick={bookAnAppointment}>
                         <div className="introduction__button-image">
                             <img className="introduction__button-icon" src="/images/icons/book.png" alt="icon" title="call-icon" />
                         </div>
@@ -29,11 +37,11 @@ const Service = () => {
             </section>
 
             <section className="information">
-                <p className="information__description">{currentService?.description}</p>
+                <p className="information__description">{about}</p>
 
                 <ul className="information__details">
                     {
-                        currentService?.details.map((item, i) => {
+                        additionalInfo?.map((item: string, i: number) => {
                             return (
                                 <li key={i} className="information__detail-item">
                                     <img className="information__detail-icon" src="/images/icons/paw.png" alt="paw" />
@@ -44,61 +52,12 @@ const Service = () => {
                     }
                 </ul>
 
-                <div className="table">
-                    <div className="table__header">
-                        <div className="table__header-title">Procedure</div>
-                        <div className="table__header-title table__small-cell">Cost (from)</div>
-                        <div className="table__header-title table__small-cell">Minimum Time</div>
-                    </div>
-
-                    <div className="table__row">
-                        <div className="table__row-cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, vero.</div>
-                        <div className="table__row-cell table__small-cell">$15</div>
-                        <div className="table__row-cell table__small-cell">10 - 15 minutes</div>
-                    </div>
-                    <div className="table__row">
-                        <div className="table__row-cell">Rabies Vaccination</div>
-                        <div className="table__row-cell table__small-cell">$15</div>
-                        <div className="table__row-cell table__small-cell">10 - 15 minutes</div>
-                    </div>
-                    <div className="table__row">
-                        <div className="table__row-cell">Lorem ipsum dolor eos velit repellat illo voluptate quibusdam.</div>
-                        <div className="table__row-cell table__small-cell">$15</div>
-                        <div className="table__row-cell table__small-cell">10 - 15 minutes</div>
-                    </div>
-                    <div className="table__row">
-                        <div className="table__row-cell">Rabies Vaccination</div>
-                        <div className="table__row-cell table__small-cell">$15</div>
-                        <div className="table__row-cell table__small-cell">10 - 15 minutes</div>
-                    </div>
-                </div>
+                <ProceduresTable list={procedures} />
             </section>
 
-            <RegistarationForm service={currentService?.name} />
+            <RegistarationForm service={title} scrollTo={regForm} />
         </main>
     );
 };
 
-export default Service;
-
-
-
- 
-
-
-
-
-
-
-
-git add client/src/components/input/Input.tsx
-git add client/src/components/registration-form/RegistarationForm.scss
-git add client/src/components/registration-form/RegistarationForm.tsx
-git add client/src/components/section-title/SectionTitle.scss  
-git add client/src/pages/contacts/Contacts.scss
-git add client/src/pages/contacts/Contacts.tsx   
-git add client/src/pages/no-match/NoMatch.scss
-git add client/src/pages/no-match/NoMatch.tsx
-git add client/src/pages/service/Service.scss
-git add client/src/pages/service/Service.tsx 
-git add client/src/components/switcher/
+export default Service;  

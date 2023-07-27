@@ -1,32 +1,48 @@
 import { Link } from "react-router-dom";
-import { ISpecialistCard } from "../../../interfaces";
+import { ISpecialist } from "../../../interfaces";
 import "./SpecialistCard.scss";
 
-const SpecialistCard = ({ photo, experience, specialisations, name, description }: ISpecialistCard) => {
+const date = new Date()
+
+const SpecialistCard = (props: ISpecialist) => {
+
+    const {
+        images,
+        name,
+        specializations,
+        about,
+        experience
+    } = props;
+
+    //count specialist's experience from now and set correct "year" form
+    const startWorking = new Date(experience);
+    const specExp = Math.abs(date.getFullYear() - startWorking.getFullYear());
+    const correspondingWordEnding = specExp === 1 ? 'year' : 'years';
+
 
     return (
         <div className="specialist-card">
             <div className="specialist-card__image-container">
-                <img className="specialist-card__image" src={`/images/specialists/${photo}`} alt="specialist" title="specialist" />
+                <img className="specialist-card__image" src={`/images/specialists/${images?.small}`} alt="specialist" title="specialist" />
             </div>
             <div className="specialist-card__data">
-                <p className="experience">exp. <span className="experience__amount">{experience} year</span></p>
+                <p className="experience">exp. <span className="experience__amount">{specExp} {correspondingWordEnding}</span></p>
                 <p className="specialist-card__name">{name}</p>
                 <div className="specialist-card__specialisation-list">
                     {
-                        specialisations.map(item => {
+                        specializations?.map((item, i) => {
                             return (
-                                <span
-                                    key={item}
-                                    className="specialist-card__specialisation"
-                                >
-                                    {item}
-                                </span>
+                                <div key={item} className="specialist-card__specialisation">
+                                    <span className="specialist-card__specialisation-name" >
+                                        {item}
+                                    </span>
+                                    {i !== specializations.length - 1 && <div className="specialist-card__separator"></div>}
+                                </div>
                             )
                         })
-                    } 
+                    }
                 </div>
-                <p className="specialist-card__description">{description}</p>
+                <p className="specialist-card__description">{about.slice(0, 55)}...</p>
                 <div className="specialist-card__cta">
                     <button className="specialist-card__button">Book</button>
                     <Link className="specialist-card__link" to="">learn more</Link>
