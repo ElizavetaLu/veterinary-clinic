@@ -13,11 +13,10 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="service/:name" element={<Service />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path='*' element={<NoMatch />} />
       </Route >
-
-      <Route path='*' element={<NoMatch />} />
     </Routes >
   );
-}
+};
 
 export default App;

@@ -1,0 +1,82 @@
+.table {
+    margin-top: 44px;
+    padding: 30px 32px;
+    border-radius: 32px;
+    background: #FBFBFB;
+    font-family: "Montserrat";
+    font-style: normal;
+
+    &__header {
+        display: flex;
+        padding-bottom: 12px;
+    }
+
+    &__header-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 40px;
+        width: 60%;
+    }
+
+    &__row {
+        display: flex;
+        border-bottom: 1px solid #E1E6EB;
+        padding: 20px 0;
+    }
+
+    &__row:last-child {
+        border-bottom: none;
+    }
+
+    &__row-cell {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        width: 60%;
+    }
+
+    &__small-cell {
+        width: 20%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .table { 
+        padding: 20px 22px;  
+    
+        &__header { 
+            padding-bottom: 7px;
+        }
+    
+        &__header-title {
+            font-size: 18px; 
+            line-height: 20px; 
+        }
+    
+        &__row { 
+            padding: 10px 0;
+        } 
+    
+        &__row-cell {
+            font-size: 14px; 
+            line-height: 18px; 
+        } 
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .table { 
+        padding: 16px;   
+        border-radius: 24px;
+
+        &__header-title {
+            font-size: 16px;  
+        } 
+    
+        &__row-cell {
+            font-size: 12px; 
+            line-height: 16px; 
+        } 
+    }
+}

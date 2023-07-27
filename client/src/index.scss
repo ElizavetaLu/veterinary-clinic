@@ -1,8 +1,12 @@
 @import "./variables";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Merriweather', 'Montserrat';
+  font-family: 'Montserrat';
 }
 
 * {

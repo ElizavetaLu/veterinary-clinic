@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { headerNavigation } from "../../data/navigation";
 import useToggle from "../../hooks/useToggle";
 import "./Header.scss";
- 
+
 
 const Header = () => {
 
@@ -21,7 +21,7 @@ const Header = () => {
                         <img className="menu__icon-mobile" src="/images/icons/burger.png" alt="menu" title="menu" />
                     </button>
 
-                    <nav className={`navigation ${isHidden ? 'navigation--show' : 'navigation--hide'}`}>
+                    <nav className={`navigation ${isHidden && 'navigation--active'}`}>
                         <button className="navigation__close" onClick={toogle}>
                             <span className="navigation__close-text">close</span>
                             <img className="navigation__close-icon" src="/images/icons/cross.png" alt="close" title="close" />
