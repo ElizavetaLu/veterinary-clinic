@@ -10,19 +10,54 @@
         @include row_align-center;
         flex-direction: column;
     }
-    
-    &__error-code { 
+
+    &__error-code,
+    &__error-text {
         color: #82c4d2;
+    }
+
+    &__error-code {
         font-size: 300px;
     }
-    
-    &__error-text { 
-        color: #89adb5;
+
+    &__error-text {
         font-size: 50px;
     }
 
     &__link {
         margin-top: 30px;
         @include button($tertiary, 30px, $main_text_color )
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .no-match {
+        &__error-code {
+            font-size: 200px;
+        }
+
+        &__error-text {
+            font-size: 30px;
+        }
+
+        &__link { 
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .no-match {
+        &__error-code {
+            font-size: 150px;
+        }
+
+        &__error-text {
+            font-size: 20px;
+        }
+
+        &__link { 
+            font-size: 16px;
+        }
     }
 }

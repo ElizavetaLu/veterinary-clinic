@@ -1,0 +1,78 @@
+@import "../../variables";
+
+.switch {
+    @include row_align-center;
+    gap: 12px;
+
+    &__title {
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    &__input[type=checkbox] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    &__label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 92px;
+        height: 50px;
+        background: #fff;
+        display: block;
+        border-radius: 100px;
+        position: relative;
+    }
+
+    &__label:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 40px;
+        height: 40px;
+        background: #CFDAE7;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    &__input:checked+label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+        background: $primary;
+    }
+
+    &__label:active:after {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .switch { 
+        gap: 7px;
+    
+        &__title { 
+            font-size: 16px;
+            line-height: 22px;
+        }
+     
+        &__label { 
+            width: 70px;
+            height: 40px; 
+        }
+    
+        &__label:after {  
+            width: 30px;
+            height: 30px; 
+        }
+     
+        &__label:active:after {
+            width: 35px;
+        }
+    }
+}

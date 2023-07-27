@@ -5,6 +5,7 @@ $main_light-text_color: #3D4855;
 
 $header-height: 124.5px;
 $space-between-sections: 120px;
+$space-between-sections_mobile: 80px;
 
 $primary: #8298AA;
 $secondary: #D6DEDC;
@@ -20,6 +21,7 @@ $danger: #d9534f;
     padding: 0 40px;
     margin: 0 auto;
 }
+
 @mixin mobile_container-padding {
     padding: 0 16px;
 }

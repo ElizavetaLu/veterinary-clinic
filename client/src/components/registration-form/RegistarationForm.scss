@@ -14,58 +14,6 @@
             @include row_align-center;
             justify-content: space-between;
             margin-bottom: 24px;
-
-            .switch {
-                @include row_align-center;
-                gap: 12px;
-
-                &__title {
-                    font-family: 'Montserrat';
-                    font-size: 18px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: 28px;
-                }
-
-                &__input[type=checkbox] {
-                    height: 0;
-                    width: 0;
-                    visibility: hidden;
-                }
-
-                &__label {
-                    cursor: pointer;
-                    text-indent: -9999px;
-                    width: 92px;
-                    height: 50px;
-                    background: #fff;
-                    display: block;
-                    border-radius: 100px;
-                    position: relative;
-                }
-
-                &__label:after {
-                    content: '';
-                    position: absolute;
-                    top: 5px;
-                    left: 5px;
-                    width: 40px;
-                    height: 40px;
-                    background: #CFDAE7;
-                    border-radius: 90px;
-                    transition: 0.3s;
-                }
-
-                &__input:checked+label:after {
-                    left: calc(100% - 5px);
-                    transform: translateX(-100%);
-                    background: $primary;
-                }
-
-                &__label:active:after {
-                    width: 50px;
-                }
-            }
         }
 
         &__title {
@@ -76,11 +24,20 @@
             line-height: 90px;
         }
 
+        &__field-row-mobile {
+            display: none
+        }
+
+        &__date-picker {
+            width: 100%;
+            max-width: 300px;
+        }
+
         &__field-row {
             @include row_align-center;
             gap: 40px;
             margin-bottom: 24px;
-        } 
+        }
 
         &__fields-columns {
             display: flex;
@@ -102,6 +59,67 @@
 
         &__send-button {
             @include button($primary, 18px, #fff)
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .form-container {
+        .form {
+            &__field-row-mobile {
+                display: flex;
+                margin-bottom: 24px;
+                justify-content: center;
+            }
+
+            &__date-picker {
+                display: none
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .form-container {
+        margin-top: $space-between-sections_mobile;
+        padding: 35px 0 $space-between-sections_mobile;
+
+        .form {
+            @include mobile_container-padding;
+
+            &__header {
+                flex-direction: column;
+                margin-bottom: 44px;
+            }
+
+            &__title {
+                font-size: 34px;
+                line-height: 60px;
+            }
+
+            &__fields-columns {
+                gap: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .form-container {
+        .form {
+            &__field-row {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            &__fields-columns {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            &__block {
+                gap: 16px;
+            }
         }
     }
 }

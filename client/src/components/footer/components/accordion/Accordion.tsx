@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useToggle from "../../../../hooks/useToggle";
-import footerNavigation from "../../../../data/footerNavigation";
+import { footerNavigation } from "../../../../data/navigation";
+import useToggle from "../../../../hooks/useToggle"; 
 import "./Accordion.scss";
 
 
@@ -47,4 +47,4 @@ const Accordion = () => {
     );
 };
 
-export default Accordion
+export default Accordion;
