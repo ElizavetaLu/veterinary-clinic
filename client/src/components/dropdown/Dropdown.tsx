@@ -1,17 +1,17 @@
-import { useState } from "react";
 import { IDropdown } from "../../interfaces";
 import useToggle from "../../hooks/useToggle";
 import "./Dropdown.scss";
 
 
-const Dropdown = ({ selected, options }: IDropdown) => {
+const Dropdown = ({ value, setValue, options, placeholder }: IDropdown) => {
 
-    const [value, setValue] = useState(selected);
-    const [isActive, toggle] = useToggle()
+    const [isActive, toggle] = useToggle();
 
+    const getOptionName = (item: any) => (item?.name || item?.title || item?.address) || placeholder
+ 
     return (
         <div className="dropdown" onClick={toggle}>
-            <p className="dropdown__selected">{value}</p>
+            <p className="dropdown__selected">{getOptionName(value)}</p>
             <img className={`dropdown__vector ${isActive && 'dropdown__vector--active'}`} src="/images/icons/vector.png" alt="vector" />
 
             {
@@ -19,16 +19,17 @@ const Dropdown = ({ selected, options }: IDropdown) => {
                 <div className="dropdown__options">
                     {
                         options.map((item) => {
+                            console.log(item)
                             return (
                                 <div
                                     key={item._id}
                                     className="dropdown__option"
                                     onClick={() => {
-                                        setValue(item?.name || item.address);
+                                        setValue(item);
                                         toggle();
                                     }}
                                 >
-                                    {item?.name || item?.address}
+                                    {getOptionName(item)}
                                 </div>
                             )
                         })

@@ -1,16 +1,15 @@
-import { useState } from "react";
-import { IRegistarationForm } from "../../interfaces"; 
+import { FormEventHandler, useState } from "react";
+import { IRegistarationForm } from "../../interfaces";
 import CustomDateTimePicker from "../date-time-picker/CustomDateTimePicker";
-// import specialists from "../../data/specialists";
-import Dropdown from "../dropdown/Dropdown"; 
+import { clinics, services, sex, specialists } from "../../data/main-data";
+import Dropdown from "../dropdown/Dropdown";
+import Switcher from "../switcher/Switcher";
 import Input from "../input/Input";
 import "./RegistarationForm.scss";
-import Switcher from "../switcher/Switcher";
-import { clinics } from "../../data/main-data";
 
 
 
-const RegistarationForm = ({ service, specialistName, clinicAddress, scrollTo }: IRegistarationForm) => {
+const RegistarationForm = ({ selectedService, selectedSpecialist, scrollTo }: IRegistarationForm) => {
 
     const [isFirstVisit, setIsFirstVisit] = useState(true);
 
@@ -18,25 +17,31 @@ const RegistarationForm = ({ service, specialistName, clinicAddress, scrollTo }:
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
-    // const [specialization, setSpecialization] = useState(service);
-    // const [specialist, setSpecialist] = useState(specialistName);
-    // const [address, setAddress] = useState(clinicAddress);
+    const [service, setService] = useState(selectedService);
+    const [specialist, setSpecialist] = useState(selectedSpecialist);
+    const [clinicAddress, setClinicAddress] = useState(null);
 
     const [clientCardNumber, setClientCardNumber] = useState('');
     const [petName, setPetName] = useState('');
     const [animalType, setAnimalType] = useState('');
     const [age, setAge] = useState('');
-    // const [sex, setSex] = useState('male');
+    const [animalSex, setAnimalSex] = useState(null);
     const [comment, setComment] = useState('');
+ 
+    const onSend: FormEventHandler = e => {
+        if(!name.trim()) return
+        e.preventDefault()
+        console.log('pip')
+    }
 
 
     return (
         <div className="form-container" ref={scrollTo}>
-            <form className="form" action="">
+            <form className="form" onSubmit={onSend}>
                 <div className="form__header">
                     <h2 className="form__title">Registration form</h2>
 
-                    <Switcher isActive={isFirstVisit} setIsActive={setIsFirstVisit}/>
+                    <Switcher isActive={isFirstVisit} setIsActive={setIsFirstVisit} />
                 </div>
                 <div className="form__fields">
 
@@ -47,8 +52,8 @@ const RegistarationForm = ({ service, specialistName, clinicAddress, scrollTo }:
                     </div>
 
                     <div className="form__field-row">
-                        <Input placeholder="Name" value={name} setValue={setName} />
-                        <Input placeholder="Last Name" value={lastName} setValue={setLastName} />
+                        <Input placeholder="Name" value={name} setValue={setName} required />
+                        <Input placeholder="Last Name" value={lastName} setValue={setLastName} required />
                         <div className="form__date-picker">
                             <CustomDateTimePicker />
                         </div>
@@ -56,22 +61,22 @@ const RegistarationForm = ({ service, specialistName, clinicAddress, scrollTo }:
 
                     <div className="form__fields-columns">
                         <div className="form__block">
-                            <Input placeholder="Phone Number" value={phoneNumber} setValue={setPhoneNumber} />
+                            <Input placeholder="Phone Number" value={phoneNumber} setValue={setPhoneNumber} required />
                             {isFirstVisit && <Input placeholder="Email" value={email} setValue={setEmail} />}
-                            {/* <Dropdown selected="Selected service" options={services} /> */}
-                            {/* <Dropdown selected="Selected specialist" options={specialists} /> */}
-                            <Dropdown selected="Selected nearest clinic" options={clinics} />
+                            <Dropdown value={service} setValue={setService} options={services} placeholder="Select service" />
+                            <Dropdown value={specialist} setValue={setSpecialist} options={specialists} placeholder="Select specialist" />
+                            <Dropdown value={clinicAddress} setValue={setClinicAddress} options={clinics} placeholder="Select nearest clinic" />
                         </div>
 
                         <div className="form__block">
                             {isFirstVisit
                                 ? <>
-                                    <Input placeholder="Pet name" value={petName} setValue={setPetName} />
-                                    <Input placeholder="Animal type" value={animalType} setValue={setAnimalType} />
-                                    <Dropdown selected="Sex" options={[{ _id: '0', name: 'Male' }, { _id: '1', name: 'Female' }]} />
+                                    <Input placeholder="Pet name" value={petName} setValue={setPetName} required />
+                                    <Input placeholder="Animal type" value={animalType} setValue={setAnimalType} required />
+                                    <Dropdown value={animalSex} setValue={setAnimalSex} options={sex} placeholder="Select sex" />
                                     <Input placeholder="Age" value={age} setValue={setAge} />
                                 </>
-                                : <Input placeholder="client card number" value={clientCardNumber} setValue={setClientCardNumber} />
+                                : <Input placeholder="client card number" value={clientCardNumber} setValue={setClientCardNumber} required />
                             }
                             <Input placeholder="Comment" value={comment} setValue={setComment} />
                         </div>

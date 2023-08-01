@@ -16,9 +16,19 @@ export const headerNavigation = [
     },
     {
         _id:'3',
+        route:'specialists',
+        title:'our specialists',
+    },
+    {
+        _id:'4',
+        route:'services',
+        title:'services',
+    },
+    {
+        _id:'5',
         route:'contacts',
         title:'contacts',
-    }
+    },
 ]
 
 
