@@ -53,7 +53,7 @@ export const services = [
         _id: "1",
         images: {
             small: "service1.png",
-            large: "service-large2.jpg"
+            large: "service-large7.jpg"
         },
         title: "Vaccination",
         description: "Vaccination is a simple, safe, and effective way of protecting against harmful diseases",
@@ -209,7 +209,7 @@ export const services = [
         _id: "4",
         images: {
             small: "service5.jpg",
-            large: "service-large3.jpg"
+            large: "service-large2.jpg"
         },
         title: "General practice",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -384,6 +384,135 @@ export const services = [
             }
         ]
     },
+    {
+        _id: "8",
+        images: {
+            small: "service11.jpg",
+            large: "service-large12.jpg"
+        },
+        title: "Rehabilitation",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem quas quae nihil temporibus quasi, vel ullam amet cupiditate blanditiis ipsum! Beatae laborum velit molestias in ab veritatis consequuntur exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem quas quae nihil temporibus quasi, vel ullam amet cupiditate blanditiis ipsum! Beatae laborum velit molestias in ab veritatis consequuntur exercitationem",
+        additionalInfo: null,
+        procedures: [
+            {
+                name: "Lorem ullam amet cupiditate blanditiis",
+                price: "from 20$",
+                timeRange: "from 2 hours",
+            },
+            {
+                name: "Atque dolorem quas quae nihil",
+                price: "from 400$",
+                timeRange: "from 30min",
+            },
+            {
+                name: "Ovel ullam amet",
+                price: "from 500$",
+                timeRange: "from 4hours",
+            },
+            {
+                name: "Aner consectetur adipisicing elit",
+                price: "from 300$",
+                timeRange: "from 3 hours",
+            },
+            {
+                name: "Temporibus quasi, vel ullam",
+                price: "from 700$",
+                timeRange: "from 4,5 hours",
+            },
+            {
+                name: "Ercitationem. Lorem ipsum dolor sit a",
+                price: "from 600$",
+                timeRange: "from 3 hours",
+            }
+        ]
+    },
+    {
+        _id: "9",
+        images: {
+            small: "service9.jpg",
+            large: "service-large11.jpg"
+        },
+        title: "Microchipping",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem quas quae nihil temporibus quasi, vel ullam amet cupiditate blanditiis ipsum! Beatae laborum velit molestias in ab veritatis consequuntur exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem quas quae nihil temporibus quasi, vel ullam amet cupiditate blanditiis ipsum! Beatae laborum velit molestias in ab veritatis consequuntur exercitationem",
+        additionalInfo: null,
+        procedures: [
+            {
+                name: "Lorem ullam amet cupiditate blanditiis",
+                price: "from 20$",
+                timeRange: "from 2 hours",
+            },
+            {
+                name: "Atque dolorem quas quae nihil",
+                price: "from 400$",
+                timeRange: "from 30min",
+            },
+            {
+                name: "Ovel ullam amet",
+                price: "from 500$",
+                timeRange: "from 4hours",
+            },
+            {
+                name: "Aner consectetur adipisicing elit",
+                price: "from 300$",
+                timeRange: "from 3 hours",
+            },
+            {
+                name: "Temporibus quasi, vel ullam",
+                price: "from 700$",
+                timeRange: "from 4,5 hours",
+            },
+            {
+                name: "Ercitationem. Lorem ipsum dolor sit a",
+                price: "from 600$",
+                timeRange: "from 3 hours",
+            }
+        ]
+    },
+    {
+        _id: "10",
+        images: {
+            small: "service10.jpg",
+            large: "service-large10.jpg"
+        },
+        title: "Ophthalmology",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem quas quae nihil temporibus quasi, vel ullam amet cupiditate blanditiis ipsum! Beatae laborum velit molestias in ab veritatis consequuntur exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem quas quae nihil temporibus quasi, vel ullam amet cupiditate blanditiis ipsum! Beatae laborum velit molestias in ab veritatis consequuntur exercitationem",
+        additionalInfo: null,
+        procedures: [
+            {
+                name: "Lorem ullam amet cupiditate blanditiis",
+                price: "from 20$",
+                timeRange: "from 2 hours",
+            },
+            {
+                name: "Atque dolorem quas quae nihil",
+                price: "from 400$",
+                timeRange: "from 30min",
+            },
+            {
+                name: "Ovel ullam amet",
+                price: "from 500$",
+                timeRange: "from 4hours",
+            },
+            {
+                name: "Aner consectetur adipisicing elit",
+                price: "from 300$",
+                timeRange: "from 3 hours",
+            },
+            {
+                name: "Temporibus quasi, vel ullam",
+                price: "from 700$",
+                timeRange: "from 4,5 hours",
+            },
+            {
+                name: "Ercitationem. Lorem ipsum dolor sit a",
+                price: "from 600$",
+                timeRange: "from 3 hours",
+            }
+        ]
+    },
 ]
 
 export const specialists = [
@@ -393,12 +522,12 @@ export const specialists = [
             small: "specialist4.png",
             large: ""
         },
-        name: "Olga Kurylenko",
+        name: "Sarah Jhannon",
         specializations: ["urologist", "nephrologist", "dermatologist", "endocrinologist"],
         about: "Neurologist of the first qualification category. Specialist in the diagnosis and treatment of diseases of the nervous system.",
         certificates: [],
         schedule: null,
-        experience: 1575418320000,
+        experience: 1975418320000,
     },
     {
         _id: "1",
@@ -406,7 +535,7 @@ export const specialists = [
             small: "specialist5.png",
             large: ""
         },
-        name: "Pavel Sergeev",
+        name: "Luke Thompson",
         specializations: ["neurologist", "general practitioner"],
         about: "An excellent specialist, at whose receptions your pet is always comfortable. Pavel Sergeev will definitely find the cause of your pet's problems and help solve it.",
         certificates: [],
@@ -419,7 +548,7 @@ export const specialists = [
             small: "specialist6.png",
             large: ""
         },
-        name: "Kateryna Makova",
+        name: "Jane Rath",
         specializations: ["therapist", "oncologist", "ophthalmologist"],
         about: "Prospective veterinarians typically complete a bachelor's degree.",
         certificates: [],
@@ -465,6 +594,32 @@ export const specialists = [
         schedule: null,
         experience: 1349187800000,
     },
+    {
+        _id: "6",
+        images: {
+            small: "specialist8.png",
+            large: ""
+        },
+        name: "David Boshie",
+        specializations: ["traumatologist", "orthopedist", "cardiologist"],
+        about: "Nam fugiat obcaecati enim excepturi. Commodi, reprehenderit nemo.",
+        certificates: [],
+        schedule: null,
+        experience: 1949187800000,
+    },
+    {
+        _id: "7",
+        images: {
+            small: "specialist9.png",
+            large: ""
+        },
+        name: "Samuel Sheron",
+        specializations: ["traumatologist", "orthopedist", "cardiologist"],
+        about: "Nam fugiat obcaecati enim excepturi. Commodi, reprehenderit nemo.",
+        certificates: [],
+        schedule: null,
+        experience: 649187800000,
+    },
 ]
 
 export const clinics = [
@@ -473,14 +628,14 @@ export const clinics = [
         address: "Molivers Ln, Bromham, Bedford",
         location: {
             latitude: 52.1522196,
-            longitude: -0.5323947,
+            longitude: -0.5333947,
         }
     },
     {
         _id: "1",
         address: "23 Eagle Gardens, Bedford MK41 7Q",
         location: {
-            latitude: 52.15113,
+            latitude: 52.13113,
             longitude: -0.4735884,
         }
     },
@@ -536,3 +691,5 @@ export const acivements = [
         color: "#96A8BB"
     }
 ]
+
+export const sex = [{ _id: '0', title: 'male' }, { _id: '1', title: 'female' }]

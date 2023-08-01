@@ -1,0 +1,151 @@
+@import "../../variables";
+
+.specialists-page {
+    .specialists-introduction {
+        position: relative;
+        background-color: #cedfdb89;
+        padding: 200px 0 $space-between-sections 0;
+
+        .backgroung-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 52vw;
+        }
+
+        .introduction {
+            @include container;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+
+            &__title {
+                font-family: 'Merriweather';
+                font-size: 44px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 70px;
+                max-width: 55%;
+            }
+
+            &__text {
+                margin-top: 14px;
+                margin-bottom: 30px;
+                font-family: 'Montserrat';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+                max-width: 55%;
+            }
+
+            &__button {
+                @include button($primary, 16px, #fff);
+                padding: 5px;
+                padding-right: 20px;
+                @include row_align-center;
+                gap: 7px;
+            }
+
+            &__button-image {
+                width: 44px;
+                height: 44px;
+                background-color: $secondary;
+                border-radius: 100%;
+                @include flex-center;
+            }
+
+            &__button-icon {
+                width: 30px
+            }
+        }
+    }
+
+    .specialists {
+        @include container;
+        margin-top: $space-between-sections;
+
+        &__list {
+            margin-top: 32px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    .specialists-page {
+        .specialists-introduction {
+            .introduction {
+                &__title {
+                    max-width: 63%;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .specialists-page {
+        .specialists-introduction {
+            .introduction {
+                @include mobile_container-padding;
+                margin-bottom: $space-between-sections_mobile;
+
+                &__title {
+                    font-size: 36px;
+                    line-height: 55px;
+                }
+
+                &__text {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .services {
+            @include mobile_container-padding;
+
+            &__list {
+                margin-top: 20px;
+                gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .specialists-page {
+        .specialists-introduction {
+            padding: $space-between-sections 0 $space-between-sections_mobile;
+
+            .backgroung-image {
+                display: none;
+            }
+
+            .introduction {
+                @include mobile_container-padding;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+
+                &__title,
+                &__text {
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .specialists {
+            margin-top: $space-between-sections_mobile;
+        }
+    }
+}

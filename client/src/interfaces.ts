@@ -24,6 +24,19 @@ export interface IService {
     procedures: IProcedure[]
 }
 
+export interface IClinic {
+    _id: string,
+    address: string,
+    location: {
+        latitude: number,
+        longitude: number,
+    },
+}
+export interface ISex {
+    _id: string,
+    title: string,
+}
+
 export interface ISpecialist {
     _id: string,
     images: IImages,
@@ -45,12 +58,15 @@ export interface IInput {
     type?: string,
     placeholder: string,
     value: string,
-    setValue: (val: string) => void
+    setValue: (val: string) => void,
+    required?: boolean
 }
 
 export interface IDropdown {
-    selected: string,
-    options: any[]
+    value: any,
+    setValue: (val: any) => void
+    options: any[],
+    placeholder: string
 }
 
 export interface IAccordion {
@@ -59,9 +75,8 @@ export interface IAccordion {
 }
 
 export interface IRegistarationForm {
-    service?: string,
-    specialistName?: string,
-    clinicAddress?: string,
+    selectedService?: string,
+    selectedSpecialist?: string,
     scrollTo: any;
 }
 
@@ -82,4 +97,19 @@ export interface ISwitcher {
 
 export interface IProceduresTable {
     list: IProcedure[]
+}
+
+export interface ILoaction {
+    lat: number,
+    lng: number
+}
+
+export interface IMap {
+    currentClinic: ILoaction
+    setCurrentClinic: (location: ILoaction) => void
+}
+
+export interface IRedirectLink {
+    text: string;
+    route: string
 }

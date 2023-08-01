@@ -1,7 +1,7 @@
 import { IInput } from "../../interfaces";
 import "./Input.scss";
 
-const Input = ({ type = "text", placeholder, value, setValue }: IInput) => {
+const Input = ({ type = "text", placeholder, value, setValue, required }: IInput) => {
 
     return (
         <input
@@ -10,6 +10,7 @@ const Input = ({ type = "text", placeholder, value, setValue }: IInput) => {
             placeholder={placeholder}
             value={value}
             onChange={e => setValue(e.target.value)}
+            required={required}
         />
     );
 };

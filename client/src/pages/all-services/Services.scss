@@ -1,0 +1,158 @@
+@import "../../variables";
+
+.services-page {
+    .services-introduction {
+        position: relative;
+        padding: 200px 0 $space-between-sections 0;
+        background-color: $tertiary;
+
+        .backgroung-image {
+            position: absolute;
+            left: 8vw;
+            bottom: 0;
+            width: 30vw;
+        }
+
+        .introduction {
+            @include container;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100%;
+
+            &__title {
+                font-family: 'Merriweather';
+                font-size: 44px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 70px;
+                max-width: 55%;
+                text-align: right;
+            }
+
+            &__text {
+                margin-top: 14px;
+                margin-bottom: 30px;
+                font-family: 'Montserrat';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+                max-width: 55%;
+                text-align: right;
+            }
+
+            &__button {
+                @include button($main_light-text_color, 18px, #fff);
+                padding: 5px;
+                padding-right: 20px;
+                @include row_align-center;
+                gap: 7px;
+            }
+
+            &__button-image {
+                width: 44px;
+                height: 44px;
+                background-color: $primary;
+                border-radius: 100%;
+                @include flex-center;
+            }
+
+            &__button-icon {
+                width: 30px
+            }
+        }
+    }
+
+    .services {
+        @include container;
+        margin-top: $space-between-sections;
+
+        &__list {
+            margin-top: 32px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .services-page {
+        .services-introduction {
+
+            .backgroung-image {
+                width: 40vw;
+            }
+
+            .introduction {
+
+                &__title {
+                    max-width: 65%;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .services-page {
+        .services-introduction {
+            .introduction {
+                @include mobile_container-padding;
+                margin-bottom: $space-between-sections_mobile;
+
+                &__title {
+                    font-size: 36px;
+                    line-height: 55px;
+                }
+
+                &__text {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .services {
+            @include mobile_container-padding;
+
+            &__list {
+                margin-top: 20px;
+                gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .services-page {
+        .services-introduction {
+            padding: $space-between-sections 0 $space-between-sections_mobile;
+
+            .backgroung-image {
+                display: none;
+            }
+
+            .introduction {
+                @include mobile_container-padding;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+
+                &__title,
+                &__text {
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .services {
+            margin-top: $space-between-sections_mobile;
+        }
+    }
+}

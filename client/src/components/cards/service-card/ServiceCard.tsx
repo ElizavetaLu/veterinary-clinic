@@ -4,16 +4,17 @@ import "./ServiceCard.scss";
 
 const ServiceCard = (props: IService) => {
 
-    const { images, title, description } = props;
+    const { images, title, description } = props; 
 
     return (
-        <Link className="service-card-link" to={`service/${title}`} state={props}>
+        <Link className="service-card-link" to={`/services/${title}`} state={props} >
             <div className="service-card">
-                <div className="service-card__image-container">
-                    <img className="service-card__image" src={`/images/services/${images.small}`} alt="service" title="Service image" />
-                </div>
+                <div
+                    className="service-card__image-container"
+                    style={{ backgroundImage: `url("/images/services/${images.small}")` }}
+                ></div>
                 <p className="service-card__title">{title}</p>
-                <p className="service-card__description">{description}</p>
+                <p className="service-card__description">{description.slice(0, 55)}</p>
             </div>
         </Link>
     );

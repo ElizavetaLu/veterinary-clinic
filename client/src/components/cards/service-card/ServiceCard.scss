@@ -6,15 +6,20 @@
         background: #FFF;
         box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.12);
         padding: 20px;
+        transition: all .2s ease;
 
-        &__image-container {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
+        &:hover {
+            transform: scale(1.03);
         }
 
-        &__image {
+        &__image-container {
+            background-size: cover;
             width: 100%;
+            min-width: 250px;
+            height: 100%;
+            min-height: 170px;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         &__title,
@@ -37,6 +42,8 @@
             font-size: 14px;
             font-weight: 400;
             line-height: 20px;
+            height: 40px;
+            overflow: hidden;
         }
     }
 }
@@ -45,6 +52,10 @@
     .service-card-link {
         .service-card {
             padding: 10px;
+
+            &__image-container {
+                min-width: 100%;
+            }
 
             &__title {
                 font-size: 16px;

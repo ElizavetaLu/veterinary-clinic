@@ -1,18 +1,17 @@
+import { useRef } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import RegistarationForm from "../../components/registration-form/RegistarationForm";
-import { IProcedure } from "../../interfaces";
-import "./Service.scss";
-import { useRef } from "react";
 import ProceduresTable from "./procedures-table/ProceduresTable";
+import "./Service.scss";
 
 
 const Service = () => {
-
+ 
     const regForm = useRef<HTMLDivElement>(null);
 
     const bookAnAppointment = () => {
-        regForm.current!.scrollIntoView(false)
-    }
+        regForm.current!.scrollIntoView(false);
+    };
 
     const { state } = useLocation();
     if (!state) return <Navigate to="*" />;
@@ -29,7 +28,7 @@ const Service = () => {
                     <h1 className="introduction__title">{title}</h1>
                     <button className="introduction__button" onClick={bookAnAppointment}>
                         <div className="introduction__button-image">
-                            <img className="introduction__button-icon" src="/images/icons/book.png" alt="icon" title="call-icon" />
+                            <img className="introduction__button-icon" src="/images/icons/book.png" alt="icon" title="book-icon" />
                         </div>
                         <span>Book an appointment</span>
                     </button>
@@ -55,7 +54,7 @@ const Service = () => {
                 <ProceduresTable list={procedures} />
             </section>
 
-            <RegistarationForm service={title} scrollTo={regForm} />
+            <RegistarationForm selectedService={state} scrollTo={regForm} />
         </main>
     );
 };

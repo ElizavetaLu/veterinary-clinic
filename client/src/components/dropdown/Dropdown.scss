@@ -17,6 +17,9 @@
     padding: 10px 32px;
  
 
+    &__selected{
+       text-transform: capitalize;
+    }
     &__vector {
         width: 20px;
     }
@@ -38,6 +41,7 @@
 
     &__option {
         padding: 6px 32px;
+        text-transform: capitalize;
         transition: all .2s ease-in;
     }
 
