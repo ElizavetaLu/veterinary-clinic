@@ -1,0 +1,38 @@
+@import "../../variables";
+
+.popup {
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    right: 70px;
+    background-color: $success;
+    @include row_align-center;
+    padding: 13px 16px;
+    border-radius: 4px;
+    transition: all .2 ease-out;
+    right: -300px;
+    -webkit-transition: right 0.4s;
+    -moz-transition: right 0.4s;
+    transition: right 0.4s;
+
+    &--active {
+        right: 70px;
+    }
+
+    &--error {
+        background-color: $danger;
+    }
+ 
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+    }
+
+    &__message {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        max-width: 250px;
+    }
+}
