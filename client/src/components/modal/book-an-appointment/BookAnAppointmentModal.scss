@@ -1,0 +1,133 @@
+@import "../../../variables";
+
+.modal-wrapper {
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 1;
+    @include flex-center;
+
+    .modal {
+        position: relative;
+        width: 80%; 
+        height: 75%;
+        border-radius: 20px;
+        padding: 50px 40px;
+        @include row_align-center;
+        flex-direction: column;
+        background-image: url('../../../../public/images/bg.png');
+        background-size: cover;
+
+        &__close {
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        &__close-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        &__appointment-options {
+            display: flex;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 100px;
+            padding: 5px;
+            gap: 20px;
+        }
+
+        &__appointment-option {
+            cursor: pointer;
+            width: 50%;
+            font-family: 'Montserrat';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 28px;
+            text-align: center;
+            text-transform: capitalize;
+            padding: 10px 20px;
+            color: $main_light-text_color;
+            border-radius: 100px;
+            transition: all .2s ease-out;
+
+            &--active {
+                background-color: $primary;
+                color: #fff;
+            }
+        }
+
+        &__data{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 60%;
+            margin-top: 32px;
+        }
+
+        &__data-switcher{
+            display: flex;
+            justify-content: center;
+        }
+
+        .switch {   
+            margin-bottom: 10px;
+            &__label { 
+                width: 70px;
+                height: 40px; 
+            }
+        
+            &__label:after { 
+                top: 5px;
+                left: 5px;
+                width: 30px;
+                height: 30px; 
+            }
+        
+            &__input:checked+label:after {
+                left: calc(100% - 5px); 
+            }
+        
+            &__label:active:after {
+                width: 40px;
+            }
+        }
+
+        &__data-error{
+            font-family: 'Montserrat';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 28px;
+            text-align: center;
+            color: $danger;
+        }
+
+        &__data-buttons{
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        &__data-button{
+           @include button($primary, 16px, #fff)
+        }
+    }
+
+    &--active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
