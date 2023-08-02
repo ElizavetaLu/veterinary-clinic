@@ -6,7 +6,7 @@ import "./Service.scss";
 
 
 const Service = () => {
- 
+
     const regForm = useRef<HTMLDivElement>(null);
 
     const bookAnAppointment = () => {
@@ -30,7 +30,7 @@ const Service = () => {
                         <div className="introduction__button-image">
                             <img className="introduction__button-icon" src="/images/icons/book.png" alt="icon" title="book-icon" />
                         </div>
-                        <span>Book an appointment</span>
+                        Book an appointment
                     </button>
                 </div>
             </section>

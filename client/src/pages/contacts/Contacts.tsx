@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { clinics } from "../../data/main-data";
+import { ILoaction } from "../../interfaces";
 import Map from "./components/map/Map";
 import "./Contacts.scss";
 
 
 const Contacts = () => {
 
-    const [currentClinic, setCurrentClinic] = useState({
-        lat: 52.13113,
-        lng: -0.4735884
-    })
+    const [currentClinic, setCurrentClinic] = useState<ILoaction>({
+        lat: 52.1522196,
+        lng: -0.5333947,
+        id: '0'
+    });
 
     return (
         <main className="contacts">
@@ -36,13 +38,14 @@ const Contacts = () => {
 
                                     const markerLocation = {
                                         lat: item.location.latitude,
-                                        lng: item.location.longitude
+                                        lng: item.location.longitude,
+                                        id: item._id,
                                     }
 
                                     return (
                                         <li
                                             key={item._id}
-                                            className="contacts__nested-item"
+                                            className={`contacts__nested-item ${currentClinic.id === item._id && 'contacts__nested-item--active'}`}
                                             onClick={() => setCurrentClinic(markerLocation)}
                                         >
                                             {item.address}
