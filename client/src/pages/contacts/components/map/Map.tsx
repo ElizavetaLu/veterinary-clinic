@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { clinics } from '../../../../data/main-data';
 import { IMap } from '../../../../interfaces';
+import config from "../../../../config.json";
 import "./Map.scss";
 
 
@@ -15,7 +16,7 @@ const Map = ({ currentClinic, setCurrentClinic }: IMap) => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyDmCGRBF10yuTUyIsJnlfs-tQgX6N0jrz4"
+        googleMapsApiKey: config.REACT_APP_GOOGLE_API_KEY
     })
 
     const mapRef = useRef(null)
@@ -37,7 +38,7 @@ const Map = ({ currentClinic, setCurrentClinic }: IMap) => {
                 center={currentClinic}
                 zoom={15}
                 onLoad={onLoad}
-                onUnmount={onUnmount} 
+                onUnmount={onUnmount}
             >
                 {
                     clinics.map(item => {
@@ -48,13 +49,10 @@ const Map = ({ currentClinic, setCurrentClinic }: IMap) => {
 
                         return (
                             <Marker
-                                key={item._id} 
-                                position={markerLocation}
-                                // icon={{ 
-                                //     url: (require('./location-marker.svg').default),  
-                                // }} 
+                                key={item._id}
+                                position={markerLocation} 
                                 onClick={() => setCurrentClinic(markerLocation)}
-                            /> 
+                            />
                         )
                     })
                 }

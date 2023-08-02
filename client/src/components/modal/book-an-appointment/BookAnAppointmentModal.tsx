@@ -168,4 +168,4 @@ const BookAnAppointmentModal = () => {
     );
 };
 
-export default BookAnAppointmentModal
+export default BookAnAppointmentModal;

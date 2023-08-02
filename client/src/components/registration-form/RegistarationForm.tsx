@@ -27,11 +27,10 @@ const RegistarationForm = ({ selectedService, selectedSpecialist, scrollTo }: IR
     const [age, setAge] = useState('');
     const [animalSex, setAnimalSex] = useState(null);
     const [comment, setComment] = useState('');
- 
+
     const onSend: FormEventHandler = e => {
-        if(!name.trim()) return
-        e.preventDefault()
-        console.log('pip')
+        e.preventDefault();
+        if (!name.trim()) return;
     }
 
 
@@ -62,7 +61,7 @@ const RegistarationForm = ({ selectedService, selectedSpecialist, scrollTo }: IR
                     <div className="form__fields-columns">
                         <div className="form__block">
                             <Input placeholder="Phone Number" value={phoneNumber} setValue={setPhoneNumber} required />
-                            {isFirstVisit && <Input placeholder="Email" value={email} setValue={setEmail} />}
+                            {isFirstVisit && <Input placeholder="Email (optional)" value={email} setValue={setEmail} />}
                             <Dropdown value={service} setValue={setService} options={services} placeholder="Select service" />
                             <Dropdown value={specialist} setValue={setSpecialist} options={specialists} placeholder="Select specialist" />
                             <Dropdown value={clinicAddress} setValue={setClinicAddress} options={clinics} placeholder="Select nearest clinic" />

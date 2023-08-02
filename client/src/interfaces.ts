@@ -77,7 +77,7 @@ export interface IAccordion {
 export interface IRegistarationForm {
     selectedService?: string,
     selectedSpecialist?: string,
-    scrollTo: any;
+    scrollTo?: any;
 }
 
 export interface INavLink {
@@ -101,15 +101,16 @@ export interface IProceduresTable {
 
 export interface ILoaction {
     lat: number,
-    lng: number
+    lng: number,
+    id?: string
 }
 
 export interface IMap {
-    currentClinic: ILoaction
+    currentClinic: ILoaction,
     setCurrentClinic: (location: ILoaction) => void
 }
 
 export interface IRedirectLink {
-    text: string;
+    text: string,
     route: string
 }

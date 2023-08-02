@@ -8,7 +8,7 @@ const Dropdown = ({ value, setValue, options, placeholder }: IDropdown) => {
     const [isActive, toggle] = useToggle();
 
     const getOptionName = (item: any) => (item?.name || item?.title || item?.address) || placeholder
- 
+
     return (
         <div className="dropdown" onClick={toggle}>
             <p className="dropdown__selected">{getOptionName(value)}</p>
@@ -19,7 +19,6 @@ const Dropdown = ({ value, setValue, options, placeholder }: IDropdown) => {
                 <div className="dropdown__options">
                     {
                         options.map((item) => {
-                            console.log(item)
                             return (
                                 <div
                                     key={item._id}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ISpecialist } from "../../../interfaces";
 import "./SpecialistCard.scss";
+import { useDispatch } from "react-redux";
+import { showModal } from "../../../store/actions/actionCreators";
 
 const date = new Date()
 
@@ -18,6 +20,8 @@ const SpecialistCard = (props: ISpecialist) => {
     const startWorking = new Date(experience);
     const specExp = Math.abs(date.getFullYear() - startWorking.getFullYear());
     const correspondingWordEnding = specExp === 1 ? 'year' : 'years';
+
+    const dispatch = useDispatch();
 
 
     return (
@@ -44,7 +48,7 @@ const SpecialistCard = (props: ISpecialist) => {
                 </div>
                 <p className="specialist-card__description">{about.slice(0, 55)}...</p>
                 <div className="specialist-card__cta">
-                    <button className="specialist-card__button">Book</button>
+                    <button className="specialist-card__button" onClick={()=>dispatch(showModal())}>Book</button>
                     <Link className="specialist-card__link" to="">learn more</Link>
                 </div>
             </div>
