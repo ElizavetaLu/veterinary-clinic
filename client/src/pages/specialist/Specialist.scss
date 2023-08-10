@@ -1,0 +1,190 @@
+@import "../../variables";
+
+.specialist-page {
+    .specialist-introduction {
+        position: relative;
+        padding-top: 200px;
+        background-color: #d6dedc1d;
+
+        .background-block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $tertiary;
+            width: 45vw;
+            height: 100%
+        }
+
+        .photo {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30vw;
+            margin-right: 6vw
+        }
+
+        .introduction {
+            @include container;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: $space-between-sections;
+
+            &__name {
+                font-size: 50px;
+            }
+
+            &__exp {
+                font-size: 17px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                font-weight: 400;
+                color: #7e7e7e;
+            }
+
+            &__text {
+                max-width: 44vw;
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 30px;
+            }
+
+            &__specializations {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                max-width: 40vw;
+                margin-bottom: 40px;
+            }
+
+            &__specialization {
+                padding: 10px 15px;
+                border-radius: 20px;
+                border: 1px solid $secondary;
+                @include row_align-center;
+                gap: 10px;
+                background-color: #fff;
+            }
+
+            &__specialization-icon {
+                width: 23px;
+            }
+
+            &__specialization-title {
+                text-transform: capitalize;
+                font-family: 'Merriweather';
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+            }
+
+            &__button {
+                @include button($main_light-text_color, 18px, #fff);
+                padding: 5px;
+                padding-right: 20px;
+                @include row_align-center;
+                gap: 7px;
+            }
+
+            &__button-image {
+                width: 44px;
+                height: 44px;
+                background-color: $primary;
+                border-radius: 100%;
+                @include flex-center;
+            }
+
+            &__button-icon {
+                width: 30px
+            }
+
+        }
+    }
+
+    .specialist {
+        @include container;
+
+        .certificates {
+            margin: $space-between-sections 0;
+            &__certificates-list {
+                margin-top: 32px;
+                display: grid;
+                justify-content: center;
+                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+            }
+
+            &__certificate {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .specialist-page {
+        .specialist-introduction {
+            padding-top: 140px;
+
+            .background-block,
+            .photo {
+                display: none;
+            }
+
+            .introduction {
+                @include mobile_container-padding;
+                padding-bottom: $space-between-sections_mobile;
+
+
+                &__brief-info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &__name {
+                    text-align: center;
+                }
+
+                &__exp {
+                    text-align: center;
+                }
+
+                &__text {
+                    max-width: 100%;
+                    text-align: center;
+                }
+
+                &__specializations {
+                    max-width: 100%;
+                }
+
+                &__specializations {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .specialist {
+            @include mobile_container-padding;
+
+            &__certificates-list {
+                margin: $space-between-sections_mobile 0;
+                gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .specialist-page {
+        .specialist {
+
+            &__certificates-list {
+                gap: 16px;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    }
+}

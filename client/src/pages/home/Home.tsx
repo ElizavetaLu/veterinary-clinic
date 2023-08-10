@@ -6,6 +6,7 @@ import SectionTitle from "../../components/section-title/SectionTitle";
 import RedirectLink from "./components/nav-link/RedirectLink";
 import Discount from "./components/discount/Discount";
 import "./Home.scss";
+import Loader from "../../components/loader/Loader";
 
 
 

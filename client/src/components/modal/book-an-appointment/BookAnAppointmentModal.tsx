@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import CustomDateTimePicker from "../../date-time-picker/CustomDateTimePicker";
+import { showModal, showPopup } from "../../../store/actions/actionCreators";
 import { clinics, services, sex, specialists } from "../../../data/main-data";
-import useToggle from "../../../hooks/useToggle";
 import Dropdown from "../../dropdown/Dropdown";
 import Switcher from "../../switcher/Switcher";
 import Input from "../../input/Input";
 import "./BookAnAppointmentModal.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { showModal, showPopup } from "../../../store/actions/actionCreators";
 
 
 const appointmentSteps = ['personal information', 'pet information', 'appointment details'];
@@ -19,7 +18,6 @@ const BookAnAppointmentModal = () => {
     const { isShown } = useSelector((state: any) => state.modal);
     const dispatch = useDispatch();
 
-    const [isActive, toggle] = useToggle();
     const [currentStep, setCurrentStep] = useState('personal information');
 
 

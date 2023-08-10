@@ -1,8 +1,7 @@
 @import "../../../variables";
 
 .specialist-card {
-    position: relative;
-    cursor: pointer;
+    position: relative; 
     border-radius: 24px;
     background: #FFF;
     display: flex;
@@ -12,11 +11,6 @@
     min-height: 231px;
     overflow: hidden;
     box-shadow: 2px 4px 8px #0000000f;
-    transition: all .2s ease;
-
-    &:hover{
-        transform: scale(1.03);
-    }
 
     &__image-container {
         max-width: 170px;
@@ -162,7 +156,7 @@
         }
 
         &__specialisation-list {
-           justify-content: center;
+            justify-content: center;
         }
     }
 }
