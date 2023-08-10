@@ -66,6 +66,7 @@
     .specialists {
         @include container;
         margin-top: $space-between-sections;
+        margin-bottom: $space-between-sections;
 
         &__list {
             margin-top: 32px;

@@ -52,6 +52,10 @@ const Service = () => {
                 </ul>
 
                 <ProceduresTable list={procedures} />
+
+                <p className="information__warning">
+                    Again, please remember that these are approximate costs and times and can vary. It's essential to consult with a veterinarian for a specific quote and to discuss the best treatment options for your pet's individual needs.
+                </p>
             </section>
 
             <RegistarationForm selectedService={state} scrollTo={regForm} />

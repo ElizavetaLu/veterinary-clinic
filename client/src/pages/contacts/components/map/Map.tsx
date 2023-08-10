@@ -1,8 +1,9 @@
 import { useRef } from 'react';
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import { clinics } from '../../../../data/main-data';
 import { IMap } from '../../../../interfaces';
 import config from "../../../../config.json";
+import Loader from "../../../../components/loader/Loader";
 import "./Map.scss";
 
 
@@ -19,6 +20,7 @@ const Map = ({ currentClinic, setCurrentClinic }: IMap) => {
         googleMapsApiKey: config.REACT_APP_GOOGLE_API_KEY
     })
 
+
     const mapRef = useRef(null)
 
     const onLoad = (map: any) => {
@@ -28,8 +30,7 @@ const Map = ({ currentClinic, setCurrentClinic }: IMap) => {
         mapRef.current = null
     }
 
-
-    if (!isLoaded) return <div>Pipka</div>
+    if (!isLoaded) return <div className='loader-container'>  <Loader /></div>
 
     return (
         <div className="map-container">
@@ -48,9 +49,9 @@ const Map = ({ currentClinic, setCurrentClinic }: IMap) => {
                         }
 
                         return (
-                            <Marker
+                            <MarkerF
                                 key={item._id}
-                                position={markerLocation} 
+                                position={markerLocation}
                                 onClick={() => setCurrentClinic(markerLocation)}
                             />
                         )

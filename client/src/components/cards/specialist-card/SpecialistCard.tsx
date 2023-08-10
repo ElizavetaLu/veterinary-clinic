@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { ISpecialist } from "../../../interfaces";
-import "./SpecialistCard.scss";
 import { useDispatch } from "react-redux";
 import { showModal } from "../../../store/actions/actionCreators";
+import { countExperienceAmount } from "../../../helpers";
+import { ISpecialist } from "../../../interfaces";
+import "./SpecialistCard.scss";
 
-const date = new Date()
 
 const SpecialistCard = (props: ISpecialist) => {
 
@@ -16,10 +16,6 @@ const SpecialistCard = (props: ISpecialist) => {
         experience
     } = props;
 
-    //count specialist's experience from now and set correct "year" form
-    const startWorking = new Date(experience);
-    const specExp = Math.abs(date.getFullYear() - startWorking.getFullYear());
-    const correspondingWordEnding = specExp === 1 ? 'year' : 'years';
 
     const dispatch = useDispatch();
 
@@ -30,7 +26,7 @@ const SpecialistCard = (props: ISpecialist) => {
                 <img className="specialist-card__image" src={`/images/specialists/${images?.small}`} alt="specialist" title="specialist" />
             </div>
             <div className="specialist-card__data">
-                <p className="experience">exp. <span className="experience__amount">{specExp} {correspondingWordEnding}</span></p>
+                <p className="experience">exp. <span className="experience__amount">{countExperienceAmount(experience)}</span></p>
                 <p className="specialist-card__name">{name}</p>
                 <div className="specialist-card__specialisation-list">
                     {
@@ -48,8 +44,9 @@ const SpecialistCard = (props: ISpecialist) => {
                 </div>
                 <p className="specialist-card__description">{about.slice(0, 55)}...</p>
                 <div className="specialist-card__cta">
-                    <button className="specialist-card__button" onClick={()=>dispatch(showModal())}>Book</button>
-                    <Link className="specialist-card__link" to="">learn more</Link>
+                    <button className="specialist-card__button" onClick={() => dispatch(showModal())}>Book</button>
+
+                    <Link className="specialist-card__link" to={`/specialists/${name}`} state={props}>learn more</Link>
                 </div>
             </div>
         </div>
